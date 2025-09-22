@@ -8,6 +8,12 @@ on:
 env:
   # time zone
   TZ: Asia/Shanghai
+  
+  # github access token
+  GIST_PAT: ${{ secrets.GIST_PAT }}
+
+  # github username and gist id, separated by '/'
+  GIST_LINK: ${{ secrets.GIST_LINK }}
 
   # network proxy aggregate config
   SUBSCRIBE_CONF: ${{ secrets.SUBSCRIBE_CONF }}
