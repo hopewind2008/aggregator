@@ -1,0 +1,254 @@
+{
+  "domains": [
+    {
+      "name": "ikuuu",
+      "domain": "ikuuu.pw",
+      "push_to": ["free"],
+      "description": "每月50GB免费流量，香港和日本节点",
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      }
+    },
+    {
+      "name": "pupucloud",
+      "domain": "pupucloud.live",
+      "push_to": ["free"],
+      "description": "每月30GB免费流量，覆盖美国、新加坡、日本、香港",
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      }
+    },
+    {
+      "name": "GLaDOS",
+      "domain": "glados.network",
+      "push_to": ["free"],
+      "description": "注册赠送4天10GB，支持签到续期",
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      }
+    },
+    {
+      "name": "SSRDOG",
+      "domain": "ssrdog.com",
+      "push_to": ["free"],
+      "description": "注册免费试用，IEPL专线，支持流媒体解锁",
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      }
+    },
+    {
+      "name": "SS-ID",
+      "domain": "ss-id.com",
+      "push_to": ["free"],
+      "description": "注册免费试用，Shadowsocks协议，IEPL专线",
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      }
+    },
+    {
+      "name": "Web3加速器",
+      "domain": "web3vpn.com",
+      "push_to": ["free"],
+      "description": "注册免费试用，Shadowsocks协议，IPLC专线",
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      }
+    },
+    {
+      "name": "万城网络",
+      "domain": "vcity.net",
+      "push_to": ["free"],
+      "description": "注册免费试用，Shadowsocks协议，IEPL专线",
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      }
+    },
+    {
+      "name": "Free机场",
+      "domain": "free-airport.com",
+      "push_to": ["free"],
+      "description": "提供免费白嫖节点，采用VLESS协议",
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      }
+    },
+    {
+      "name": "V2free",
+      "domain": "v2free.org",
+      "push_to": ["free"],
+      "description": "提供免费节点，支持每日签到获取流量",
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      }
+    },
+    {
+      "name": "狗狗加速",
+      "domain": "dogvpn.com",
+      "push_to": ["free"],
+      "description": "注册免费试用，支持Shadowsocks和Hysteria协议",
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      }
+    }
+  ],
+  "crawl": {
+    "enable": true,
+    "telegram": {
+      "enable": true,
+      "users": {
+        "proxy_channel": {
+          "push_to": ["free"],
+          "limit": 100
+        },
+        "free_proxy": {
+          "push_to": ["free"],
+          "limit": 50
+        },
+        "v2ray_free": {
+          "push_to": ["free"],
+          "limit": 30
+        },
+        "clash_proxy": {
+          "push_to": ["free"],
+          "limit": 40
+        },
+        "trojan_free": {
+          "push_to": ["free"],
+          "limit": 25
+        },
+        "ss_free": {
+          "push_to": ["free"],
+          "limit": 35
+        }
+      }
+    },
+    "github": {
+      "enable": true,
+      "repos": {
+        "hopewind2008/aggregator": {
+          "push_to": ["free"],
+          "file_patterns": ["*.yaml", "*.yml", "*.json"]
+        },
+        "wzdnzd/aggregator": {
+          "push_to": ["free"],
+          "file_patterns": ["*.yaml", "*.yml", "*.json"]
+        },
+        "freefq/free": {
+          "push_to": ["free"],
+          "file_patterns": ["*.yaml", "*.yml", "*.json"]
+        },
+        "peasoft/NoMoreWalls": {
+          "push_to": ["free"],
+          "file_patterns": ["*.yaml", "*.yml", "*.json"]
+        }
+      }
+    },
+    "google": {
+      "enable": true,
+      "queries": [
+        "免费代理 2025",
+        "proxy free 2025",
+        "v2ray free 2025",
+        "clash proxy free 2025",
+        "trojan free 2025",
+        "vmess free 2025",
+        "ss free 2025",
+        "ssr free 2025",
+        "免费机场 2025",
+        "free airport 2025",
+        "免费VPN 2025",
+        "free vpn 2025"
+      ],
+      "push_to": ["free"],
+      "max_results": 50
+    },
+    "yandex": {
+      "enable": true,
+      "queries": [
+        "бесплатный прокси 2025",
+        "free proxy 2025",
+        "бесплатный VPN 2025"
+      ],
+      "push_to": ["free"]
+    },
+    "twitter": {
+      "enable": true,
+      "users": {
+        "proxy_account": {
+          "push_to": ["free"]
+        },
+        "free_proxy_twitter": {
+          "push_to": ["free"]
+        }
+      }
+    }
+  },
+  "groups": {
+    "free": {
+      "targets": {
+        "clash": "free-clash"
+      },
+      "filters": {
+        "min_speed": 2000,
+        "max_latency": 3000,
+        "countries": [
+          "US", "JP", "SG", "HK", "TW", "KR", "GB", "DE", "FR", "CA", "AU",
+          "NL", "CH", "SE", "NO", "DK", "FI", "AT", "BE", "IT", "ES", "PT",
+          "IE", "LU", "IS", "NZ", "RU", "UA", "PL", "CZ", "HU", "RO", "BG",
+          "HR", "SI", "SK", "LT", "LV", "EE", "MT", "CY", "GR", "TR"
+        ],
+        "protocols": [
+          "vmess", "vless", "trojan", "ss", "ssr", "snell", "hysteria2",
+          "hysteria", "tuic", "anytls", "http", "socks"
+        ]
+      }
+    }
+  },
+  "speed_test": {
+    "enable": true,
+    "url": "http://www.gstatic.com/generate_204",
+    "timeout": 15,
+    "threads": 64,
+    "min_speed": 2000,
+    "max_latency": 3000,
+    "test_interval": 300,
+    "retry_count": 3
+  },
+  "health_check": {
+    "enable": true,
+    "interval": 600,
+    "timeout": 20,
+    "retry_count": 3,
+    "check_urls": [
+      "http://www.gstatic.com/generate_204",
+      "https://www.google.com",
+      "https://www.cloudflare.com",
+      "https://www.github.com"
+    ]
+  },
+  "storage": {
+    "engine": "gist",
+    "items": {
+      "free-clash": {
+        "username": "hopewind2008",
+        "gistid": "YOUR_GIST_ID_HERE",
+        "filename": "clash.yaml",
+        "description": "免费代理池 - 自动更新 2025"
+      }
+    }
+  },
+  "settings": {
+    "thread_count": 128,
+    "timeout": 20000,
+    "retry_count": 5,
+    "check_interval": 1800,
+    "max_proxies": 2000,
+    "min_quality_score": 0.8,
+    "enable_duplicate_removal": true,
+    "enable_geoip_check": true,
+    "enable_health_check": true,
+    "enable_speed_test": true,
+    "enable_auto_update": true,
+    "update_interval": 3600
+  }
+}
