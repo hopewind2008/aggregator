@@ -29,7 +29,20 @@ import subconverter
 from clash import QuotedStr, quoted_scalar
 
 # outbind type
-SUPPORT_TYPE = ["ss", "ssr", "vmess", "trojan", "snell", "vless", "hysteria2", "hysteria", "http", "socks5", "anytls"]
+SUPPORT_TYPE = [
+    "ss",
+    "ssr",
+    "vmess",
+    "trojan",
+    "tuic",
+    "snell",
+    "vless",
+    "hysteria2",
+    "hysteria",
+    "http",
+    "socks5",
+    "anytls",
+]
 
 # date format
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
@@ -176,10 +189,19 @@ def fetchone(
     proxies, subscriptions = [], []
 
     if not utils.isb64encode(content=content):
-        regex = r"(?:https?://)?(?:[a-zA-Z0-9\u4e00-\u9fa5\-]+\.)+[a-zA-Z0-9\u4e00-\u9fa5\-]+(?:(?:(?:/index.php)?/api/v1/client/subscribe\?token=[a-zA-Z0-9]{16,32})|(?:/link/[a-zA-Z0-9]+\?(?:sub|mu|clash)=\d)|(?:/(?:s|sub)/[a-zA-Z0-9]{32}))|https://jmssub\.net/members/getsub\.php\?service=\d+&id=[a-zA-Z0-9\-]{36}(?:\S+)?"
+        regex = r"(?:https?://)?(?:[a-zA-Z0-9\u4e00-\u9fa5\-]+\.)+[a-zA-Z0-9\u4e00-\u9fa5\-]+(?::\d+)?(?:(?:(?:/index.php)?/api/v1/client/subscribe\?token=[a-zA-Z0-9]{16,32})|(?:/link/[a-zA-Z0-9]+\?(?:sub|mu|clash)=\d)|(?:/(?:s|sub)/[a-zA-Z0-9]{32}))|https://jmssub\.net/members/getsub\.php\?service=\d+&id=[a-zA-Z0-9\-]{36}(?:\S+)?"
         groups = re.findall(regex, content, flags=re.I)
         if groups:
-            subscriptions = list(set([utils.url_complete(x) for x in groups if x]))
+            subscriptions = [utils.url_complete(x) for x in groups if x]
+
+        try:
+            parts = re.findall(
+                r"(?m)^#(?:\s+)?(?:!MANAGED-CONFIG|订阅链接)[^\n]*?(https?://[^\s\"'<>]+)", content, flags=re.I
+            )
+            if parts:
+                subscriptions.extend([utils.trim(p) for p in parts])
+        except:
+            pass
 
     if not noproxies:
         try:
@@ -218,7 +240,7 @@ def fetchone(
         except:
             logger.error(f"[V2RaySE] parse proxies failed, url: {url}, message: \n{traceback.format_exc()}")
 
-    return proxies, subscriptions
+    return proxies, list(set(subscriptions)) if subscriptions else []
 
 
 def fetch(params: dict) -> list:
